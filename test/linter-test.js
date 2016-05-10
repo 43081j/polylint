@@ -38,6 +38,14 @@ suite('Linter', function() {
     });
   });
 
+  test('possible-invalid-link-tags', function() {
+    var w = findWarnings(warnings, 'possible-invalid-link-tags');
+    assert.equal(w.length, 1);
+    var warning = w[0];
+    assert.equal(warning.location.line, 10);
+    assert.equal(warning.location.column, 1);
+  });
+
   test('bind-to-class', function() {
     var w = findWarnings(warnings, 'bind-to-class');
     assert.equal(w.length, 1);
